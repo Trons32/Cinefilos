@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../css/estilo.css">
+
+  <script src="../../js/ventaTiquetes.js"></script>
+</head>
+<body>
+  <div class="side-menu">
+    <ul>
+      <label for="" style="font-size: 25px;  font-weight: bold; " >CINEFILOS <i class="bi bi-camera-reels-fill" style="margin-left: 5px;"></i></label>  
+        <hr>
+
+       <label for=""  style="margin-left: 50px; font-family: 'Times New Roman', Times, serif;" >Vendedor</label>
+
+        <hr>
+      <li ><i class="bi bi-house"></i> <a href="index.html">Inicio</a></li>
+      <li><i class="bi bi-film"></i> <a href="pelicula.html">Peliculas</a></li>
+      <li class="active"><i class="bi bi-shop-window"></i> <a href="ventadetiquetes.html">Ventas de Tiquetes</a></li>
+
+      <div style="margin: 50px 30px;"  >
+        <a href="../../index.html" class="btn btn-outline-primary p-2" >Cerrar Sesion</a>
+      </div>
+
+    </ul>
+  </div>
+
+  <div class="content">
+    
+      <div class="inicio">
+        <div >
+            <div class="row justify-content-center" >
+               <div class="col-md-3">
+                 <h3 class="text-center" >Venta de Tiquetes</h3>
+                 <hr class="text-center" width="100%" >
+               </div>
+            </div>
+         </div>
+   
+         <div class="container mt-5">
+   
+           <div style="width: 50%; margin-left: 25%;" >
+               <form action="javascript:guardarVentaTiquete()">
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Pelicula:</label>
+                    <div class="col-md-8">
+                        <select id="selectPelicula" class="form-select" aria-label="Disabled select example">
+                            <option selected>--Seleccion--</option>
+                        </select>
+                    </div>
+                </div>
+                   <div class="mb-3 row">
+                       <label for="inputPassword" class="col-md-4 col-form-label">Sala:</label>
+                       <div class="col-md-8">
+                           <select id="selectSala" class="form-select" >
+                               <option selected>--Seleccion--</option>
+                           </select>
+                       </div>
+                   </div>
+                   <div class="mb-3 row">
+                       <label for="inputPassword" class="col-md-4 col-form-label">Horario:</label>
+                       <div class="col-md-8">
+                           <select id="selectHorario" class="form-select" aria-label="Disabled select example">
+                               <option selected>--Seleccion--</option>
+                           </select>
+                       </div>
+                   </div>
+                   <div class="mb-3 row">
+                       <label for="inputPassword" class="col-md-4 col-form-label">Numero de tiquetes:</label>
+                       <div class="col-md-8">
+                         <input type="number" class="form-control" id="numeroT" required>
+                       </div>
+                   </div>
+                   <div class="mb-3 row">
+                       <label for="inputPassword" class="col-md-4 col-form-label">Forma de pago:</label>
+                       <div class="col-md-8">
+                           <select id="formaPago" class="form-select" aria-label="Disabled select example" style="margin-bottom: 50px;">
+                               <option selected>--Seleccion--</option>
+                               <option value="Targeta de credito">Targeta de credito</option>
+                               <option value="Targeta de debito">Targeta de debito</option>
+                           </select>
+                       </div>
+                   </div>
+                   <label for="">Por favor seleccione la(s) posicion(es):</label>
+                   <div class="cine" style="display: flex; padding: 20px 20px;" >
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat1" value="A1" name="seats">
+                           <label for="seat1" class="checkmark"></label>
+                           <span class="seat-label">A1</span>
+                       </div>
+                       <div class="seat reserved">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat2" value="A2" name="seats" disabled>
+                           <label for="seat2" class="checkmark"></label>
+                           <span class="seat-label">A2</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat3" value="A3" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A3</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat4" value="A4" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A4</span>
+                       </div>
+                       <div class="seat reserved">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat5" value="A5" name="seats" disabled>
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A5</span>
+                       </div>
+                   </div>
+                   <div class="cine" style="display: flex; padding: 20px 20px;" >
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg"> 
+                           <input type="checkbox" id="seat6" value="A6" name="seats">
+                           <label for="seat1" class="checkmark"></label>
+                           <span class="seat-label">A6</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat7" value="A7" name="seats">
+                           <label for="seat2" class="checkmark"></label>
+                           <span class="seat-label">A7</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat8" value="A8" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A8</span>
+                       </div>
+                       <div class="seat reserved">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat9" value="A9" name="seats" disabled>
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A9</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat10" value="A10" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A10</span>
+                       </div>
+                   </div>
+                   <div class="cine" style="display: flex; padding: 20px 20px;" >
+                       <div class="seat reserved">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat11" value="A11" name="seats" disabled>
+                           <label for="seat1" class="checkmark"></label>
+                           <span class="seat-label">A11</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat12" value="A12" name="seats">
+                           <label for="seat2" class="checkmark"></label>
+                           <span class="seat-label">A12</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat13" value="A13" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A13</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat14" value="A14" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A14</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat15" value="A15" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A15</span>
+                       </div>
+                   </div>
+                   <div class="cine" style="display: flex; padding: 20px 20px; margin-bottom: 50px;" >
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat16" value="A16" name="seats">
+                           <label for="seat1" class="checkmark"></label>
+                           <span class="seat-label">A16</span>
+                       </div>
+                       <div class="seat reserved">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat17" value="A17" name="seats" disabled>
+                           <label for="seat2" class="checkmark"></label>
+                           <span class="seat-label">A17</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat18" value="A18" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A18</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat19" value="A19" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A19</span>
+                       </div>
+                       <div class="seat">
+                           <img src="../../recursos/imagenes/sillacine.jpg">
+                           <input type="checkbox" id="seat20" value="A20" name="seats">
+                           <label for="seat3" class="checkmark"></label>
+                           <span class="seat-label">A20</span>
+                       </div>
+                   </div>
+                   <div class="mb-3 row">
+                       <div class="col-md-12">
+                           <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 40px;">Guardar</button>
+                       </div>
+                   </div>
+               </form>
+   
+           </div>
+   
+           <div class="tabla">
+               <form action="">
+                 
+                 <div class="row">
+                   <div class="col-md-4">
+                     <input class="form-control" type="text">
+                   </div>
+                   <div class="col-md-2">
+                     <button class="btn btn-primary">Buscar</button>
+                   </div>
+                 </div>
+   
+               </form>
+               <table id="tablaVentaTiquetes" class="table table-striped table-hover">
+                   <thead>
+                       <tr>
+                         <th scope="col">Sala</th>
+                         <th scope="col">Horario</th>
+                         <th scope="col">Numero de tiquetes</th>
+                         <th scope="col">Posiciones</th>
+                         <th scope="col">Forma de pago</th>
+                         <th scope="col">Fecha de venta</th>
+                         <th scope="col">Vendedor</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                        
+                        
+                       </tr>
+                     </tbody>
+                 </table>
+           </div>
+   
+   
+       </div>
+      </div>
+
+  </div>
+
+
+
+  <script src="../../js/funcionesVentaTiquetes.js"></script>
+
+  <script>
+    console.log(JSON.parse(localStorage.getItem("ventaTiquete") || "[]"))
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

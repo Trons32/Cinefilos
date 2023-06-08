@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../css/estilo.css">
+
+  <script src="../../js/sucursales.js"></script>
+
+</head>
+<body>
+  <div class="side-menu">
+    <ul>
+      <label for="" style="font-size: 25px;  font-weight: bold; " >CINEFILOS <i class="bi bi-camera-reels-fill" style="margin-left: 5px;"></i></label>  
+        <hr>
+
+       <label for=""  style="margin-left: 50px; font-family: 'Times New Roman', Times, serif;" >Gerente</label>
+
+        <hr>
+      <li><i class="bi bi-house"></i> <a href="index.html">Inicio</a></li>
+      <li class="active" ><i class="bi bi-building-fill-add"></i> <a href="sucursales.html">Sucursales</a></li>
+      <li><i class="bi bi-shop-window"></i> <a href="compra.html">Compras de Peliculas</a></li>
+      <li><i class="bi bi-graph-up"></i> <a href="estadistica.html">Estadisticas</a></li>
+
+      <div style="margin: 50px 30px;"  >
+        <a href="../../index.html" class="btn btn-outline-primary p-2" >Cerrar Sesion</a>
+      </div>
+    </ul>
+  </div>
+
+  <div class="content">
+    
+
+    <div class="container mt-2" style="display: flex; justify-content: center;">
+
+        <div style="width: 80%;">
+
+          <div class="text-center  mb-5" >
+            <h2> Sucursales </h2>
+        </div>
+
+            <form action="javascript:guardarSucursal()">
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Codigo:</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" id="codigo" required>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-secondary">Buscar</button>
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                  <label for="inputPassword" class="col-md-2 col-form-label">Direccion:</label>
+                  <div class="col-md-2">
+                    <label>Calle</label>
+                    <input type="text" class="form-control"  id="calle"  placeholder="Ej:Los alamos" style="font-size: 10px;" >
+                </div>
+                <div class="col-md-2">
+                  <label>Carrera</label>
+                    <input type="text" class="form-control"  id="carrera"  placeholder="Ej:Carrera 15" style="font-size: 10px;">
+                </div>
+                <div class="col-md-2 ">
+                  <label>Etapa</label>
+                    <input type="text" class="form-control"  id="etapa"  placeholder="Ej:Etapa 3" style="font-size: 10px;">
+                </div>
+                <div class="col-md-2">
+                  <label>Manzana</label>
+                    <input type="text" class="form-control"  id="manzana"  placeholder="Ej:Manzana 8" style="font-size: 10px;">
+                </div>
+                <div class="col-md-2 ">
+                  <label>Barrio</label>
+                  <input type="text" class="form-control"  id="barrio"  placeholder="Ej:San Francisco" style="font-size: 10px;">
+                </div>
+              </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Departamento:</label>
+                    <div class="col-md-10">
+                        <select id="departamento" class="form-select" aria-label="Disabled select example">
+                            <option selected>--Seleccion--</option>
+                            <option value="Amazonas">Amazonas</option>
+                            <option value="Antioquia">Antioquia</option>
+                            <option value="Arauca">Arauca</option>
+                            <option value="Atlántico">Atlántico</option>
+                            <option value="Bolívar">Bolívar</option>
+                            <option value="Boyacá">Boyacá</option>
+                            <option value="Caldas">Caldas</option>
+                            <option value="Caquetá">Caquetá</option>
+                            <option value="Casanare">Casanare</option>
+                            <option value="Cauca">Cauca</option>
+                            <option value="Cesar">Cesar</option>
+                            <option value="Chocó">Chocó</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Cundinamarca">Cundinamarca</option>
+                            <option value="Guainía">Guainía</option>
+                            <option value="Guaviare">Guaviare</option>
+                            <option value="Huila">Huila</option>
+                            <option value="La Guajira">La Guajira</option>
+                            <option value="Magdalena">Magdalena</option>
+                            <option value="Meta">Meta</option>
+                            <option value="Nariño">Nariño</option>
+                            <option value="Norte de Santander	">Norte de Santander	</option>
+                            <option value="Putumayo">Putumayo</option>
+                            <option value="Quindío">Quindío</option>
+                            <option value="Risaralda">Risaralda</option>
+                            <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                            <option value="Santander">Santander</option>
+                            <option value="Sucre">Sucre</option>
+                            <option value="Tolima">Tolima</option>
+                            <option value="Valle del Cauca	">Valle del Cauca	</option>
+                            <option value="Vaupés">Vaupés</option>
+                            <option value="Vichada">Vichada</option>
+                            
+
+
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Ciudad:</label>
+                    <div class="col-md-10">
+                        <select id="ciudad" class="form-select" aria-label="Disabled select example">
+                            <option selected>--Seleccion--</option>
+                            <option value="Leticia">Leticia</option>
+                            <option value="Medellín">Medellín</option>
+                            <option value="Arauca">Arauca</option>
+                            <option value="Barranquilla">Barranquilla</option>
+                            <option value="Cartagena">Cartagena</option>
+                            <option value="Tunja">Tunja</option>
+                            <option value="Manizales">Manizales</option>
+                            <option value="Florencia">Florencia</option>
+                            <option value="Yopal">Yopal</option>
+                            <option value="Popayán">Popayán</option>
+                            <option value="Valledupar	">Valledupar	</option>
+                            <option value="Quibdó">Quibdó</option>
+                            <option value="Montería">Montería</option>
+                            <option value="Bogotá">Bogotá</option>
+                            <option value="Inírida">Inírida</option>
+                            <option value="San José del Guaviare	">San José del Guaviare	</option>
+                            <option value="Neiva">Neiva</option>
+                            <option value="Riohacha">Riohacha</option>
+                            <option value="Santa Marta	">Santa Marta	</option>
+                            <option value="Villavicencio">Villavicencio</option>
+                            <option value="Pasto">Pasto</option>
+                            <option value="Cúcuta">Cúcuta</option>
+                            <option value="Mocoa">Mocoa</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Pereira">Pereira</option>
+                            <option value="San Andrés	">San Andrés	</option>
+                            <option value="Bucaramanga">Bucaramanga</option>
+                            <option value="Sincelejo">Sincelejo</option>
+                            <option value="Ibagué">Ibagué</option>
+                            <option value="Cali">Cali</option>
+                            <option value="Mitú">Mitú</option>
+                            <option value="Puerto Carreño">Puerto Carreño</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Gerente Encargado:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="gerente" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Numero De Salas:</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="numerosala" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">Numero De Trabajadores:</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="numerotrabajadores" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-2 col-form-label">¿Posee cafetería?:</label>
+                    <div class="col-md-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="si">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Si
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="no" checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            No
+                          </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" >Guardar</button>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger" style="width: 100%;" id="eliminar">Eliminar</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-success" style="width: 100%;" id="actualizar">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+
+    </div>
+
+    <table id="tablaSucursales" class="table table-striped table-hover" style="margin-top: 100px;">
+        <thead>
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Encargado</th>
+              <th scope="col">Numero De Sala</th>
+              <th scope="col">Numero De Trabajadores</th>
+              <th scope="col">Cafeteria</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+      </table>
+
+    </div>
+
+   <script src="../../js/funcionesSucursales.js"></script>
+
+   <script>
+    console.log(JSON.parse(localStorage.getItem("sucursal") || "[]"))
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

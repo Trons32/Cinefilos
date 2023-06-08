@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../css/estilo.css">
+</head>
+<body>
+  <div class="side-menu">
+    <ul>
+      <label for="" style="font-size: 25px;  font-weight: bold; " >CINEFILOS <i class="bi bi-camera-reels-fill" style="margin-left: 5px;"></i></label>  
+        <hr>
+
+       <label for=""  style="margin-left: 35px; font-family: 'Times New Roman', Times, serif;" >Administrador</label>
+
+        <hr>
+        <li><i class="bi bi-house"></i> <a href="index.html">Inicio</a></li>
+        <li ><i class="bi bi-camera-video-fill"></i> <a href="productora.html">Productora</a></li>
+        <li ><i class="bi bi-card-heading"></i> <a href="cartelera.html">Carteleras</a></li>
+        <li ><i class="bi bi-person"></i> <a href="usuario.html">Usuario</a></li>
+        <li class="active"><i class="bi bi-person"></i> <a href="clientes.html">Cliente</a></li>
+
+        <hr>
+      
+
+       <div style="margin: 50px 30px;"  >
+         <a href="../../index.html" class="btn btn-outline-primary p-2" >Cerrar Sesion</a>
+       </div>
+
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="container mt-5">
+        <h1><center>Clientes registrados</center></h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover" id="tablaClientes" style="margin-top: 100px;">
+                <thead>
+                    <tr>
+                      <th scope="col">Nombres</th>
+                      <th scope="col">Apellidos</th>
+                      <th scope="col">Tipo de documento</th>
+                      <th scope="col">Numero de documento</th>
+                      <th>Fecha de nacimiento</th>
+                      <th>Direccion</th>
+                      <th>Celular</th>
+                      <th>Redes sociales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>
+              </table>
+        </div>
+    </div>
+  </div>
+
+
+  <script>
+     
+     const tabla = document.getElementById("tablaClientes").getElementsByTagName('tbody')[0];
+     tabla.innerHTML = "";
+  
+     const clientes = JSON.parse(localStorage.getItem("clientes") || "[]");
+  
+     clientes.forEach((cliente) => {
+       const fila = document.createElement("tr");
+  
+       const Nombre = document.createElement("th");
+       Nombre.setAttribute("scope", "row");
+       Nombre.innerText = cliente.Nombre;
+       fila.appendChild(Nombre);
+  
+       const Apellidos = document.createElement("td");
+       Apellidos.innerText = cliente.Apellidos;
+       fila.appendChild(Apellidos);
+  
+       const TipoDocumento = document.createElement("td");
+       TipoDocumento.innerText = cliente.TipoDocumento;
+       fila.appendChild(TipoDocumento);
+  
+       const NumeroDocumento = document.createElement("td");
+       NumeroDocumento.innerText = cliente.NumeroDocumento
+       fila.appendChild(NumeroDocumento);
+  
+       const FechaNacimiento = document.createElement("td");
+       FechaNacimiento.innerText = cliente.FechaNacimiento
+       fila.appendChild(FechaNacimiento);
+  
+       const DireccionResidencia = document.createElement("td");
+       DireccionResidencia.innerText = cliente.DireccionResidencia;
+       fila.appendChild(DireccionResidencia);
+  
+       const NumeroCelular = document.createElement("td");
+       NumeroCelular.innerText = cliente.NumeroCelular;
+       fila.appendChild(NumeroCelular);
+
+       const RedesSociales = document.createElement("td");
+       RedesSociales.innerText = cliente.RedesSociales;
+       fila.appendChild(RedesSociales);
+  
+       tabla.appendChild(fila);
+     });
+
+     console.log(JSON.parse(localStorage.getItem("clientes") || "[]"))
+  </script>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

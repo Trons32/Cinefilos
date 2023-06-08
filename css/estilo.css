@@ -1,0 +1,111 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 230px;
+    background-color: #ebecec;
+    padding: 20px;
+    overflow: auto; 
+  }
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .side-menu li {
+    margin-bottom: 10px;
+    padding: 10px 5px;
+  }
+  .side-menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 0px;
+  }
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  .side-menu li:hover {
+    background-color: #ced4da;
+  }
+  .side-menu .active {
+    background-color: #ced4da;
+    font-weight: bold;
+    }
+
+  .seat {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+.seat input[type="checkbox"] {
+  margin-right: 5px;
+}
+.seat .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+.seat input[type="checkbox"]:checked + .checkmark {
+  background-color: green;
+  border-color: green;
+}
+.seat.reserved .checkmark {
+  background-color: red;
+  border-color: red;
+}
+.seat .seat-label {
+  font-size: 14px;
+}
+
+div img {
+  width: 30px;
+}
+
+.tarjeta{
+  height: 350px;
+  
+}
+
+.botontarjeta{
+  padding: 0px 10px;
+}
+
+.boton{
+  margin-bottom: 15px;
+
+
+}
+
+.inicio{
+  height: calc(100vh - 400px);
+}
+
+ul {
+  list-style-type: none; /* Quitar estilos de viñeta o punto */
+  padding: 0; /* Quitar el espacio interior */
+  margin: 0; /* Quitar el espacio exterior */
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+li input {
+  flex: 1;
+  margin-top: 10px;
+}
+
+li button {
+  margin-left: 10px;
+}
+li a{
+  margin-left: 5px;
+}

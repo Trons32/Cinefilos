@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
+
+    <script src="../../js/cartelera.js"></script>
+   
+
+</head>
+<body>
+  <div class="side-menu">
+    <ul>
+      <label for="" style="font-size: 25px;  font-weight: bold; " >CINEFILOS <i class="bi bi-camera-reels-fill" style="margin-left: 5px;"></i></label>  
+        <hr>
+
+       <label for=""  style="margin-left: 35px; font-family: 'Times New Roman', Times, serif;" >Administrador</label>
+
+        <hr>
+        <li><i class="bi bi-house"></i> <a href="index.html">Inicio</a></li>
+        <li ><i class="bi bi-camera-video-fill"></i> <a href="productora.html">Productora</a></li>
+        <li class="active"><i class="bi bi-card-heading"></i> <a href="cartelera.html"> Carteleras</a></li>
+        <li ><i class="bi bi-person"></i> <a href="usuario.html">Usuario</a></li>
+        <li ><i class="bi bi-person"></i> <a href="clientes.html">Cliente</a></li>
+
+        <hr>
+
+        <div style="margin: 50px 30px;"  >
+          <a href="../../index.html" class="btn btn-outline-primary p-2" >Cerrar Sesion</a>
+        </div>
+        
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1><center>Carteleras</center></h1>
+
+    <div class="container mt-5" style="display: flex; justify-content: center;">
+
+        <div style="width: 50%;">
+            <form action="">
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Sala:</label>
+                    <div class="col-md-6">
+                        <select id="sala" class="form-select" aria-label="Disabled select example">
+                            <option selected>--Seleccion--</option>
+                            <option value="Sala1">Sala1</option>
+                            <option value="Sala2">Sala2</option>
+                            <option value="Sala3">Sala3</option>
+                            <option value="Sala4">Sala4</option>
+                            <option value="Sala5">Sala5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-secondary">Buscar</button>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Horario:</label>
+                    <div class="col-md-8">
+                        <select id="horario" class="form-select" aria-label="Disabled select example">
+                            <option selected>--Seleccion--</option>
+                            <option value="10:00 A.m.">1:00 A.m.</option>
+                            <option value="10:00 P.m.">10:00 P.m.</option>
+                            <option value="3:00 P.m.">3:00 P.m.</option>
+                            <option value="6:00 P.m.">6:00 P.m.</option>
+                            <option value="8:00 P.m.">8:00 P.m.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-md-4 col-form-label">Pelicula:</label>
+                    <div class="col-md-8">
+                        <select id="selectPelicula" class="form-select" aria-label="Disabled select example">
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-md-4 col-form-label">Fecha de inicio:</label>
+                  <div class="col-md-8">
+                    <input type="date" class="form-control" id="fechaInicio" required>
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-md-4 col-form-label">Fecha de finalizacion:</label>
+                <div class="col-md-8">
+                  <input type="date" class="form-control" id="fechaFinalizacion" required>
+                </div>
+            </div>
+                <div class="mb-3 row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="guardar">Guardar</button>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger" style="width: 100%;" id="eliminar">Eliminar</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-success" style="width: 100%;" id="actualizar">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+
+    </div>
+
+    <table id="tablaCartelera" class="table table-striped table-hover" style="margin-top: 100px;">
+        <thead>
+            <tr>
+              <th scope="col">Sala</th>
+              <th scope="col">Horario</th>
+              <th scope="col">Pelicula</th>
+              <th scope="col">Fecha de Inicio</th>
+              <th scope="col">Fecha de finalizacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+      </table>
+  </div>
+
+
+
+
+  <script src="../../js/funcionesCartelera.js"></script>
+
+  <script>
+    console.log(JSON.parse(localStorage.getItem("cartelera") || "[]"))
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
